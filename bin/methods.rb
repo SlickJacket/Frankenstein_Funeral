@@ -1,5 +1,6 @@
-require_relative '../config/environment'
 
+require 'bundler'
+Bundler.require
 
 system "clear"
 
@@ -9,7 +10,7 @@ puts "What's your name?"
 
 input = gets.chomp
 
- user = User.create(name: input)
+user = User.create(name: input)
 
  def game_event(message)
   $prompt.keypress(message, keys: [:return])
