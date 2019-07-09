@@ -1,4 +1,4 @@
-class BodyPart < ActiveRecord::Base
+class Part < ActiveRecord::Base
 has_many :skeletons 
 has_many :users, through: :skeletons
 

@@ -6,4 +6,7 @@ ActiveRecord::Base.logger=nil
 
 require_all 'models'
 
+
 require_relative '../bin/methods.rb'
+
+
