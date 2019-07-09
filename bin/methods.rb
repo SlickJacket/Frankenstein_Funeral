@@ -1,10 +1,9 @@
 require_relative '../config/environment'
-require_relative '../models/user.rb'
-require_relative './methods'
+
 
 system "clear"
 
-prompt = TTY::Prompt.new
+$prompt = TTY::Prompt.new
 
 puts "What's your name?"
 
@@ -12,31 +11,29 @@ input = gets.chomp
 
  user = User.create(name: input)
 
-prompt.keypress("Welcome, #{user.name}. (press enter to continue)", keys: [:return])
-system 'clear'
+ def game_event(message)
+  $prompt.keypress(message, keys: [:return])
+  system 'clear'
+ end
 
-prompt.keypress("Your parents are dead.", keys: [:return])
-system 'clear'
+game_event("Welcome, #{user.name}. (press enter to continue)")
 
-prompt.keypress("To make things worse, skeletons stole their body parts.", keys: [:return])
-system 'clear'
+game_event("Your parents are dead.")
 
-prompt.keypress("The funeral is tonight. Not only do you not have your parents' body parts...", keys: [:return])
-system 'clear'
+game_event("To make things worse, skeletons stole their body parts.")
 
-prompt.keypress("You have nothing to say at the funeral.", keys: [:return])
-system 'clear'
+game_event("The funeral is tonight. Not only do you not have your parents' body parts...")
+ 
+game_event("You have nothing to say at the funeral.")
+ 
+game_event("There's only one answer. You have to kick some skeleton ass.")
+ 
+game_event("This is: ")
+ 
+game_event("FRANKENSTEIN FUNERAL!!!!")
+ 
 
-prompt.keypress("There's only one answer. You have to kick some skeleton ass.", keys: [:return])
-system 'clear'
-
-prompt.keypress("This is: ", keys: [:return])
-system 'clear'
-
-prompt.keypress("FRANKENSTEIN FUNERAL!!!!", keys: [:return])
-system 'clear'
-
-input = prompt.select("You heard there was a skeleton picking up a bag of chips at your local bodega. If you hurry, you can catch him. You ready?", ["Yeah!", "No, I'm too scared"])
+input = $prompt.select("You heard there was a skeleton picking up a bag of chips at your local bodega. If you hurry, you can catch him. You ready?", ["Yeah!", "No, I'm too scared"])
 
 if input == "No, I'm too scared"
     puts "Game over, coward." #ascii art (someone who is scared) , end the game here
@@ -44,11 +41,9 @@ if input == "No, I'm too scared"
 end
 system 'clear'
 
-prompt.keypress("You run to the bodega and head straight to the chips aisle. You look to your right and...", keys: [:return])
-system 'clear'
+game_event("You run to the bodega and head straight to the chips aisle. You look to your right and...")
 
-prompt.keypress("It's a skeleton!!!!", keys: [:return]) #ascii art, music 
-system 'clear'
+game_event("It's a skeleton!!!!") #ascii art, music 
 
 puts "it's over!"
 
