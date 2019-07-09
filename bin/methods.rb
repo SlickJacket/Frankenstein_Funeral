@@ -1,7 +1,5 @@
-require_relative '../config/environment'
-require_relative '../models/user.rb'
-require_relative './methods'
-
+require 'bundler'
+Bundler.require
 system "clear"
 
 prompt = TTY::Prompt.new
@@ -10,7 +8,7 @@ puts "What's your name?"
 
 input = gets.chomp
 
- user = User.create(name: input)
+user = User.create(name: input)
 
 prompt.keypress("Welcome, #{user.name}. (press enter to continue)", keys: [:return])
 system 'clear'
