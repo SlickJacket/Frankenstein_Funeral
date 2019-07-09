@@ -76,6 +76,7 @@ DEPENDENCIES
   faker
   pry
   require_all
+  rest-client
   sinatra-activerecord
   sqlite3
   tty-prompt
