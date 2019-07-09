@@ -2,7 +2,6 @@ require 'bundler'
 Bundler.require
 system "clear"
 
-
 prompt = TTY::Prompt.new
 
 puts "What's your name?"
