@@ -2,6 +2,7 @@
 
 require 'bundler'
 require_relative '../bin/battles.rb'
+#require_relative 'run.rb'
 Bundler.require
 
 
@@ -22,9 +23,9 @@ system "clear"
 $prompt = TTY::Prompt.new
 
 
-# puts "What's your name?"
+puts "What's your name?"
 
-# input = gets.chomp
+input = gets.chomp
 
 $user = User.create(name: input)
 
@@ -36,8 +37,6 @@ $user = User.create(name: input)
 
 
 game_event("Welcome, #{$user.name}. (press enter to continue)")
-# game_event("Welcome, #{user.name}. (press enter to continue)")
-
 
 game_event("Your parents are dead.")
 
