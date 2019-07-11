@@ -8,9 +8,9 @@ def music
     system "clear"
     end
 
-# User.destroy_all
-# Skeleton.destroy_all
-# Part.destroy_all
+User.destroy_all
+Skeleton.destroy_all
+Part.destroy_all
 
 # $skel = ["Roder Skellington", "Skelcifer Smith", "Bones MacGee", "Tired Soul", "Just Your Mom's Friend", "Helen Back"]
 # $bp = ["Your parent's legs", "Your parent's arms", "Your parent's heads", "Your parent's torsos"]

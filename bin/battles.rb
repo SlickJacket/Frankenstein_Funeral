@@ -13,7 +13,7 @@ def battle(message)
     part = Part.create(name: $bp[-1])
     skelName = Skeleton.create(name: $skel.sample, user_id: $user.id, part_id: part.id )
     
-    game_event("My name is #{skelName.name} and #{$bp.pop} #{message}" )
+    game_event("My name is #{skelName.name} and #{$bp[-1]} #{message}" )
 
     input = $prompt.select("What Will You Do!?", ["Attack!", "Run!"])
 
