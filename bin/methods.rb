@@ -28,10 +28,10 @@ $prompt = TTY::Prompt.new
 
 system "clear"
 
-puts "What's your name?"
 
 music("audio/thunderstorm.mp3")
 
+puts "What's your name?"
 
 
 input = gets.chomp
@@ -550,7 +550,7 @@ game_event("You guy isn't answering his door. You bein to worry, you begin to pe
 
 game_event("You remove your piss soaked underwear and throw them in a dumpster in the alley next to his building. but wait, that's not your own piss you're smelling!.. well, it's that too,.. but like, there's something else too!")
 
-music("audio/scream")
+music("audio/scream.mp3")
 
 game_event("
 
@@ -646,6 +646,7 @@ if input == "Check Inventory"
 end
 
 #******************FUNERAL**************************************
+music("audio/funeral.mp3")
 game_event(" 
        _________________________
       |\ _____________________ /|                                                 
@@ -663,24 +664,35 @@ game_event("You're at the funeral. Not that many people showed up. It's a holida
 content = Fact.pluck(:content)
 if $user.facts.length < 1 
     game_event("Everyone laughs at you and calls you a loser. Wow, you couldn't even come up with a eulogy to share at your parents' funeral. That's embarrassing. Game over, coward.")
+    cut_music
+
     exit
 elsif $user.facts.length == 1
     game_event("My parents always used to say that #{content}. That is all. Thank you.")
     game_event("People seemed into it, but not that into it. Congratulations.") 
+    cut_music
+
     exit 
 elsif $user.facts.length == 2
     game_event("My parents always used to say that #{content[0]}. But it's also important to remember that #{content[1]}. That is all. Thank you.")
     game_event("People seemed pretty into it. Thanks for playing.") 
+    cut_music
+
     exit  
 elsif $user.facts.length == 3
     game_event("My parents always used to say that #{content[0]}. But it's also important to remember that #{content[1]}. And let's never forget that #{content[2]}. That is all. Thank you.")
     game_event("People cheer and clap and stuff. Way to go, #{$user.name} I'm in love with you.") 
+    cut_music
+
     exit 
 elsif $user.facts.length == 4
     game_event("My parents always used to say that #{content[0]}. But it's also important to remember that #{content[1]}. And let's never forget that #{content[2]}, especially when considering #{content[3]}. That is all. Thank you.")
     game_event("People chant your name for hours. There's buzz around town that you might win an oscar for your speech. Way to go, #{$user.name}. I'm in love with you.") 
+    cut_music
+
     exit 
 end
+
 
 puts "it's over!"
 
