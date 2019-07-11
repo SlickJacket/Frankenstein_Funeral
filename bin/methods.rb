@@ -491,7 +491,8 @@ victory ("You jump onto the skeleton's back and tear its arms off.")
 
 #**************************INVENTORY****************************************#
 
-music("audio/victory")
+music("audio/victory.mp3")
+
 input = $prompt.select("Nice job defeating that skeleton. Do you want to try and find another one, or check your inventory?", ["Go find another skeleton", "Check Inventory"])
 
 if input == "Check Inventory"
